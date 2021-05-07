@@ -28,21 +28,12 @@ public class BadPassword {
     driver.findElement(By.linkText("Log In/Register")).click();
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).clear();
-    driver.findElement(By.id("username")).sendKeys("a");
+    driver.findElement(By.id("username")).sendKeys("max");
     driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).clear();
-    driver.findElement(By.id("password")).sendKeys("aaaaaaaaaaaaaa");
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).clear();
-    driver.findElement(By.id("username")).sendKeys("aaaaaaaaaaaa");
-    driver.findElement(By.xpath("//form[@id='login']/table/tbody/tr[2]")).click();
-    driver.findElement(By.id("password")).clear();
-    driver.findElement(By.id("password")).sendKeys("a");
-    driver.findElement(By.name("submit")).click();
     driver.findElement(By.name("submit")).click();
     driver.findElement(By.name("submit")).click();
     // ERROR: Caught exception [ERROR: Unsupported command [doubleClick | name=submit | ]]
+    driver.findElement(By.name("submit")).click();
     driver.findElement(By.name("submit")).click();
   }
 
@@ -88,4 +79,3 @@ public class BadPassword {
     }
   }
 }
-

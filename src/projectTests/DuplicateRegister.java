@@ -8,7 +8,6 @@ import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-import java.util.Random;
 
 public class DuplicateRegister {
   private WebDriver driver;
@@ -24,25 +23,36 @@ public class DuplicateRegister {
   }
 
   @Test
-  public void testDuplicateRegister() throws Exception {
-	
-	 
-    driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/home.html");
+  public void testRegisterUser() throws Exception {
+    driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/registration.html");
+    driver.findElement(By.linkText("Home")).click();
+    driver.findElement(By.linkText("Log In/Register")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.linkText("Registration Page")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).clear();
+    driver.findElement(By.id("username")).sendKeys("newwwwwwwwwwwwwwwwwww");
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).clear();
+    driver.findElement(By.id("password")).sendKeys("aaaaaaaaaa");
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
     driver.findElement(By.linkText("Log In/Register")).click();
     driver.findElement(By.linkText("Registration Page")).click();
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).clear();
-    driver.findElement(By.id("username")).sendKeys("a");
+    driver.findElement(By.id("username")).sendKeys("max");
     driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).clear();
-    driver.findElement(By.id("password")).sendKeys("a");
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.name("submit")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [doubleClick | name=submit | ]]
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.name("submit")).click();
+    driver.findElement(By.id("password")).sendKeys("password");
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    // ERROR: Caught exception [ERROR: Unsupported command [doubleClick | //input[@value='Registration'] | ]]
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
   }
 
   @After

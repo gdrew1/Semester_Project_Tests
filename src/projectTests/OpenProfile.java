@@ -24,6 +24,7 @@ public class OpenProfile {
 
   @Test
   public void testProfile() throws Exception {
+	driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/home.html");
     driver.findElement(By.linkText("Log In/Register")).click();
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).clear();

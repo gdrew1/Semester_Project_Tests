@@ -24,7 +24,7 @@ public class Leaderboard {
 
   @Test
   public void testLeaderboard() throws Exception {
-    driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/home.html%22");
+    driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/home.html");
     driver.findElement(By.linkText("Leaderboard")).click();
   }
 

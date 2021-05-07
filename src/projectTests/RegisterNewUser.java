@@ -1,7 +1,6 @@
 package projectTests;
 
 import java.util.regex.Pattern;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -9,7 +8,6 @@ import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-import java.util.Random;
 
 public class RegisterNewUser {
   private WebDriver driver;
@@ -25,26 +23,19 @@ public class RegisterNewUser {
   }
 
   @Test
-  public void testRegisterNewUser() throws Exception {
-	  Random rand = new Random();
-		 
-    driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/home.html");
+  public void testRegisterUser() throws Exception {
+    driver.get("http://ec2-3-140-1-42.us-east-2.compute.amazonaws.com:4141/client/registration.html");
+    driver.findElement(By.linkText("Home")).click();
     driver.findElement(By.linkText("Log In/Register")).click();
+    driver.findElement(By.id("username")).click();
     driver.findElement(By.linkText("Registration Page")).click();
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).clear();
-    driver.findElement(By.id("username")).sendKeys(String.valueOf(rand.nextFloat()));
+    driver.findElement(By.id("username")).sendKeys("newwwwwwwwwwwwwwwwwww");
     driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).clear();
-    driver.findElement(By.id("password")).sendKeys("heisnew");
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.id("username")).clear();
-    driver.findElement(By.id("username")).sendKeys(String.valueOf(rand.nextFloat()));
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).clear();
-    driver.findElement(By.id("password")).sendKeys("heisnew");
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.linkText("Profile")).click();
+    driver.findElement(By.id("password")).sendKeys("aaaaaaaaaa");
+    driver.findElement(By.xpath("//input[@value='Registration']")).click();
   }
 
   @After
